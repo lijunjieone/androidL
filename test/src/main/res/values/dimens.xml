@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="home_header_title_height">50dip</dimen>
+    <dimen name="home_header_title_init_offset">-50dip</dimen>
+    <dimen name="home_header_pager_offset">-145dip</dimen>
+    <dimen name="top_container">200dip</dimen>
+</resources>

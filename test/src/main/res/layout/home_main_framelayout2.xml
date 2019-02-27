@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    >
+    <FrameLayout
+        android:id="@+id/top_container"
+        android:background="#00ff00"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_container"
+        app:layout_behavior="@string/behavior_top_view"
+        >
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/main_container"
+        android:background="#00ffff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/behavior_main_view"
+        >
+    </FrameLayout>
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
