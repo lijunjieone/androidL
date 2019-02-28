@@ -60,6 +60,7 @@ public class MainFragment extends Fragment {
         mList.add(new Item("home2","com.y.t.ui.main.home.HomeFragment2"));
         mList.add(new Item("actvity1","com.y.t.SettingsActivity"));
         mList.add(new Item("alert","com.y.t.ui.main.AlertFragment"));
+        mList.add(new Item("livedata","com.y.t.ui.main.LiveDataFragment"));
     }
 
     void init(View view) {
