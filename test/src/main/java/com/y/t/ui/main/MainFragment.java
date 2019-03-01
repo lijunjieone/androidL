@@ -63,6 +63,7 @@ public class MainFragment extends Fragment {
         mList.add(new Item("livedata","com.y.t.ui.main.LiveDataFragment"));
         mList.add(new Item("tablayout","com.y.t.ui.main.TabLayoutFragment"));
         mList.add(new Item("swipelayout","com.y.t.ui.main.SwipeFragment"));
+        mList.add(new Item("Spake","com.y.t.ui.main.SpakeFragment"));
     }
 
     void init(View view) {
