@@ -27,6 +27,7 @@ public class SpakeFragment extends Fragment {
         return view;
     }
 
+
     void initView(View v){
         SparkView sparkView = (SparkView)v.findViewById(R.id.sparkview);
         float[] data = {1.0f,2.0f,3.1f,4.5f,8.0f};
