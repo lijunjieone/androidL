@@ -26,8 +26,20 @@ fun main(args:Array<String>) {
 //    Zoo(Dog2()).bark()
 //    testEnum(Command.B)
 
+    testSplit()
 }
 
+fun testSplit() {
+    val user = User(12,name)
+    val (age,name) = user
+    println(age)
+    println(name)
+}
+
+class User(var age:Int,var name:String) {
+    operator fun component1() = age
+    operator fun component2() = name
+}
 sealed class SuperCommand {
     object A:SuperCommand()
     object B:SuperCommand()
