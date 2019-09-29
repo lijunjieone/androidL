@@ -64,6 +64,7 @@ public class MainFragment extends Fragment {
         mList.add(new Item("tablayout","com.y.t.ui.main.TabLayoutFragment"));
         mList.add(new Item("swipelayout","com.y.t.ui.main.SwipeFragment"));
         mList.add(new Item("Spake","com.y.t.ui.main.SpakeFragment"));
+        mList.add(new Item("Span","com.y.t.ui.main.SpanFragment"));
     }
 
     void init(View view) {
