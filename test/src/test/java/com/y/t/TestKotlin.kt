@@ -26,7 +26,111 @@ fun main(args:Array<String>) {
 //    Zoo(Dog2()).bark()
 //    testEnum(Command.B)
 
-    testSplit()
+//    testSplit()
+
+//    testFor()
+
+
+//    testList()
+
+//    testList2()
+
+
+    testSort3()
+}
+
+data class Person(var name:String ,var age:Int)
+
+fun initPersonList():MutableList<Person> {
+    var personList:MutableList<Person> = mutableListOf()
+    personList.add(Person("Jim",12))
+    personList.add(Person("A-Lin",12))
+    personList.add(Person("Tom",11))
+    personList.add(Person("Mary",14))
+    return personList
+}
+
+fun testSort() {
+    val personList = initPersonList()
+    println("before")
+    personList.forEach(::println)
+
+    println("after")
+    personList.sortByDescending { it.age }
+
+    personList.forEach(::println)
+
+}
+
+fun testSort2() {
+    val personList = initPersonList()
+    println("before")
+    personList.forEach(::println)
+
+    println("after")
+    personList.sortWith(compareBy({it.age},{it.name}))
+    personList.forEach(::println)
+
+}
+
+fun testSort3() {
+    val c1:Comparator<Person> = Comparator{o1,o2 ->
+        if(o2.age == o1.age) {
+            o1.name.compareTo(o2.name)
+        }else {
+            o2.age - o1.age
+        }
+    }
+
+    val personList = initPersonList()
+    println("before")
+    personList.forEach(::println)
+
+    println("after")
+    personList.sortWith(c1)
+    personList.forEach(::println)
+}
+
+fun testList2() {
+    val list = arrayListOf<Char>('a','b','c','d')
+
+    val a = list.map { it - 'a' }.filter { it > 0 }.find { it>1 }
+
+    println("a $a")
+}
+
+fun testList() {
+    val list = arrayListOf<String>("a","b","c","d")
+    for(str in list) {
+        println("str: $str")
+    }
+
+    for((index,value) in list.withIndex()) {
+        println("index: $index, value: $value")
+    }
+}
+//fun testFor1
+fun testFor() {
+    for(i in 1..10) {
+        println("$i")
+    }
+
+    for(i in 10 downTo 1) {
+        println("down $i")
+    }
+
+    for(i in 1..10 step 2) {
+        println("step $i")
+    }
+
+
+    repeat(10) {
+        println("repeat $it")
+    }
+
+    for(i in 1 until 10) {
+        println("$i")
+    }
 }
 
 fun testSplit() {
