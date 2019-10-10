@@ -1,5 +1,11 @@
 package com.y.t
 
+import android.gesture.GestureLibraries
+import kotlinx.coroutines.*
+import kotlinx.coroutines.experimental.delay
+import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.experimental.runBlocking
+import kotlin.coroutines.coroutineContext
 
 
 fun main(args:Array<String>) {
@@ -36,7 +42,70 @@ fun main(args:Array<String>) {
 //    testList2()
 
 
-    testSort3()
+//    testSort3()
+//    testWith()
+//    testAlso()
+    testCoroutines5()
+}
+
+fun testCoroutines() {
+    launch {
+        delay(1000)
+        println("World!")
+    }
+
+    println("Hello,")
+    Thread.sleep(2000)
+
+}
+
+fun testCoroutines2() {
+    launch {
+        delay(1000)
+        println("World!")
+    }
+
+    println("Hello,")
+
+    runBlocking {
+        delay(2000)
+    }
+}
+
+fun testCoroutines3() {
+    val job = launch {
+        delay(1000)
+        println("World!")
+    }
+
+    println("Hello,")
+
+//    job.join()
+}
+
+
+fun testCoroutines5() {
+    val job = launch {
+        doWorld()
+    }
+    println("Hello,")
+    runBlocking {
+        delay(1001)
+    }
+}
+
+suspend fun doWorld() {
+    delay(1000)
+    println("World")
+}
+
+
+fun testcoroutines4() {
+    launch {
+        delay(200)
+        println("Task from runBlocking")
+    }
+
 }
 
 data class Person(var name:String ,var age:Int)
@@ -48,6 +117,35 @@ fun initPersonList():MutableList<Person> {
     personList.add(Person("Tom",11))
     personList.add(Person("Mary",14))
     return personList
+}
+
+fun testAlso() {
+    var a = 1
+    var b = 2
+
+    println("before,a:$a b:$b")
+    a = b.also { b = a }
+    println("after,a:$a b:$b")
+
+}
+class Turtle {
+    fun penDown()=println("penDown")
+    fun penUp()=println("penUp")
+    fun turn(degrees:Double) = println("degree:$degrees")
+    fun forward(pixels:Double) = println("pixels: $pixels")
+}
+
+fun testWith() {
+    val myTurtle = Turtle()
+    with(myTurtle) {
+        penDown()
+        for(i in 1..4) {
+            forward(100.0)
+            turn(90.0)
+        }
+
+        penUp()
+    }
 }
 
 fun testSort() {
