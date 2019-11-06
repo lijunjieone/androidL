@@ -45,7 +45,18 @@ fun main(args:Array<String>) {
 //    testSort3()
 //    testWith()
 //    testAlso()
-    testCoroutines5()
+//    testCoroutines6()
+
+    foo(100)
+}
+
+
+fun foo(x:Int) {
+    fun double(y:Int):Int {
+        return y*2
+    }
+
+    println(double(x))
 }
 
 fun testCoroutines() {
@@ -83,6 +94,19 @@ fun testCoroutines3() {
 //    job.join()
 }
 
+
+fun testCoroutines6() {
+    runBlocking {
+        repeat(100_000000) {
+            launch {
+                delay(10)
+                println("..$it..")
+            }
+        }
+
+        delay(100)
+    }
+}
 
 fun testCoroutines5() {
     val job = launch {
